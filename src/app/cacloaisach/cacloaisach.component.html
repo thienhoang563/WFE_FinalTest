@@ -1,0 +1,29 @@
+<h2 style="text-align: center">BOOK LIST</h2>
+<div class="container">
+  <div class="row">
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of bookList;index as i">
+        <td>{{i+1}}</td>
+        <td>{{book.name}}</td>
+        <td><button type="button" class="btn btn-primary" (click)="readagain(i)">Đọc lại</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<form [formGroup]="formCreate" (ngSubmit)="addBook()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" formControlName="name"
+    id="name" placeholder="Enter name of Book">
+    <button class="btn btn-primary">ADD</button>
+  </div>
+</form>

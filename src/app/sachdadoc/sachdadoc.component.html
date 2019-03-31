@@ -1,0 +1,24 @@
+<h2 style="text-align: center">READ LIST</h2>
+<div class="container">
+  <div class="row">
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of bookList;index as i">
+        <td>{{i+1}}</td>
+        <td>{{book.name}}</td>
+        <td>
+<!--          <form [formGroup]="formreadagainBook" (ngSubmit)=""></form>-->
+          <button type="button" class="btn btn-primary">Đã đọc</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
